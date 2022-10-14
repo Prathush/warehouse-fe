@@ -1,0 +1,28 @@
+<app-header></app-header>
+<section *ngIf="productsWithLocationList$ | async as productsWithLocationList">
+    <div class="row" *ngIf="!!productsWithLocationList.length; else emptyResult">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-striped">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Location</th>
+                </tr>
+                <tr *ngFor="let productWithLocationList of productsWithLocationList">
+                    <td>{{productWithLocationList.name}}</td>
+                    <td>
+                        <div *ngFor="let location of productWithLocationList.locationList">
+                            {{location}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <ng-template #emptyResult>
+        <div class="alert alert-warning" role="alert">
+            No results found
+        </div>
+    </ng-template>
+
+</section>
+<app-footer></app-footer>

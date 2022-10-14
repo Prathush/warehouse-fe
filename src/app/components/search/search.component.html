@@ -1,0 +1,9 @@
+<div class="container">
+    <div class=" input-group rounded mr-2">
+        <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search"
+            (keyup)="updateSearchString($event)" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-success" (click)="onSearchClicked()">
+            Search
+        </button>
+    </div>
+</div>

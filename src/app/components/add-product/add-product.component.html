@@ -1,0 +1,47 @@
+<app-header></app-header>
+<ng-container *ngIf="initialProduct$ | async as product">
+    <section *ngIf="boxList$ | async as boxList">
+        <div class="col-md-8 offset-md-2">
+            <div>
+                <h5>Add Product</h5>
+            </div>
+
+            <div class="row">
+                <h6 class="col-2">
+                    Name
+                </h6>
+                <div class="col-2">
+                    <input type="text" (change)="onChange($event, product, 'name')" required />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <h6 class="col-2">
+                    Box
+                </h6>
+                <div class="col-2">
+                    <select (change)="onChange($event, product, 'boxName')" required>
+                        <option [value]="null" [disabled]="true">Select Available Box</option>
+                        <option [value]="box" *ngFor="let box of boxList">{{box}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-2" *ngIf="hasNoBoxesAvaliable(boxList)">
+                <div class="col-6">
+                    <div class="alert alert-warning" role="alert">
+                        Currently, there are no boxes available. To add new box to Warehouse, please <a
+                            routerLink="/add-box">click here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-2 mr-2">
+                    <a routerLink="/"><button class="btn btn-danger">Cancel</button></a>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-success" (click)="saveProductDetails(product)">Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>
+<app-footer></app-footer>

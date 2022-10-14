@@ -1,27 +1,32 @@
 # Warehouse
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+Warehouse management is a Frontend application to create, store, and search products with product location(box).
 
-## Development server
+Angular cli version 14.2.6.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Git Repository URL:
+https://github.com/Prathush/warehouse-fe.git
 
-## Code scaffolding
+Steps to run (Git):
+1. npm install
+2. npm build --prod or ng build --prod
+3. npm start or ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Application URL:
+http://localhost:4200/
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Application Functionality 
 
-## Running unit tests
+Create Box:
+    Click on the create box link to create the box with capacity
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add Products:
+    Click on the add products link to add the products to the mentioned box.
 
-## Running end-to-end tests
+Search Products:
+    Click on the search products link to search the add products with location(box)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
